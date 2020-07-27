@@ -23,10 +23,8 @@ function download(id){
 		name = await getName(id)
 		name = name.substr(0, name.length-10)
 		console.log(name)
-		let stream = ytdl(id, {
-			quality: 'highestaudio',
-			//filter: 'audioonly',
-		});
+		console.log(id)
+		let stream = ytdl(id);
 		let start = Date.now();
 		ffmpeg(stream)
 			.audioBitrate(192)
